@@ -11,7 +11,7 @@ public clientValidator()
     .WithMessage("O nome deve ser preenchido.")
     .Length(3, 100)
     .WithMessage("O nome deve ter entre 3 e 100 caracteres.");
-    //--------------------------------------------------------------------------
+    //---------------------------------------------------------------------------
     RuleFor(Client => Client.phone).NotEmpty()
     .WithMessage("O número deve ser preenchido.")
     .Length(11)
