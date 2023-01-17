@@ -1,17 +1,7 @@
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-namespace client.Model
-{
-    [Table("Clients")]
-    [Serializable]
-    public class Client
+
+public class clientSchema
     {
-        [Column("id")]
-        public int clientId { get; set; }
-        //--------------------------------------------------------------------
-        [Column("uuId")]
-        public string uuId { get; set; }
-        //--------------------------------------------------------------------
         [Column("name")]
         public string name { get; set; }
         //--------------------------------------------------------------------
@@ -50,7 +40,4 @@ namespace client.Model
         //--------------------------------------------------------------------
         [Column("complement")]
         public string complement { get; set; }   
-        //--------------------------------------------------------------------
-        public List<Coffee> Coffee;//Cria uma lista de produtos vinculada a um usuário.
     }
-}

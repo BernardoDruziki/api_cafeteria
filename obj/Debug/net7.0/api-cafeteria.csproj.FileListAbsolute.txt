@@ -43,3 +43,5 @@ C:\Users\BernardoMiróDruziki\Desktop\api-cafeteria\bin\Debug\net7.0\Npgsql.Enti
 C:\Users\BernardoMiróDruziki\Desktop\api-cafeteria\bin\Debug\net7.0\System.CodeDom.dll
 C:\Users\BernardoMiróDruziki\Desktop\api-cafeteria\bin\Debug\net7.0\BCrypt.Net-Next.dll
 C:\Users\BernardoMiróDruziki\Desktop\api-cafeteria\bin\Debug\net7.0\FluentValidation.dll
+C:\Users\BernardoMiróDruziki\Desktop\api-cafeteria\bin\Debug\net7.0\api-cafeteria.xml
+C:\Users\BernardoMiróDruziki\Desktop\api-cafeteria\obj\Debug\net7.0\api-cafeteria.xml

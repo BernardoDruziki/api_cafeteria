@@ -3,6 +3,7 @@ using System;
 using DbPgSql;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace apicafeteria.Migrations
 {
     [DbContext(typeof(pgsql))]
-    partial class pgsqlModelSnapshot : ModelSnapshot
+    [Migration("20230117123312_sellerPropertiesAndFiles")]
+    partial class sellerPropertiesAndFiles
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -118,6 +121,10 @@ namespace apicafeteria.Migrations
                         .HasColumnType("text")
                         .HasColumnName("category");
 
+                    b.Property<int>("clientId")
+                        .HasColumnType("integer")
+                        .HasColumnName("clientId");
+
                     b.Property<string>("description")
                         .IsRequired()
                         .HasColumnType("text");
@@ -138,10 +145,6 @@ namespace apicafeteria.Migrations
                     b.Property<double?>("promotionPrice")
                         .HasColumnType("double precision")
                         .HasColumnName("promotionalPrice");
-
-                    b.Property<int>("sellerId")
-                        .HasColumnType("integer")
-                        .HasColumnName("sellerId");
 
                     b.Property<string>("uuId")
                         .IsRequired()

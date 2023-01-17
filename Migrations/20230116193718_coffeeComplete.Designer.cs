@@ -3,6 +3,7 @@ using System;
 using DbPgSql;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace apicafeteria.Migrations
 {
     [DbContext(typeof(pgsql))]
-    partial class pgsqlModelSnapshot : ModelSnapshot
+    [Migration("20230116193718_coffeeComplete")]
+    partial class coffeeComplete
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -118,6 +121,10 @@ namespace apicafeteria.Migrations
                         .HasColumnType("text")
                         .HasColumnName("category");
 
+                    b.Property<int>("clientId")
+                        .HasColumnType("integer")
+                        .HasColumnName("clientId");
+
                     b.Property<string>("description")
                         .IsRequired()
                         .HasColumnType("text");
@@ -139,10 +146,6 @@ namespace apicafeteria.Migrations
                         .HasColumnType("double precision")
                         .HasColumnName("promotionalPrice");
 
-                    b.Property<int>("sellerId")
-                        .HasColumnType("integer")
-                        .HasColumnName("sellerId");
-
                     b.Property<string>("uuId")
                         .IsRequired()
                         .HasColumnType("text")
@@ -151,93 +154,6 @@ namespace apicafeteria.Migrations
                     b.HasKey("coffeeId");
 
                     b.ToTable("Coffee");
-                });
-
-            modelBuilder.Entity("client.Model.Seller", b =>
-                {
-                    b.Property<int>("sellerId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasColumnName("id");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("sellerId"));
-
-                    b.Property<string>("cep")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("cep");
-
-                    b.Property<string>("city")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("city");
-
-                    b.Property<string>("cnpj")
-                        .HasColumnType("text")
-                        .HasColumnName("cnpj");
-
-                    b.Property<string>("companyName")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("companyName");
-
-                    b.Property<string>("complement")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("complement");
-
-                    b.Property<string>("cpf")
-                        .HasColumnType("text")
-                        .HasColumnName("cpf");
-
-                    b.Property<string>("district")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("district");
-
-                    b.Property<string>("email")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("email");
-
-                    b.Property<string>("name")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("name");
-
-                    b.Property<string>("number")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("number");
-
-                    b.Property<string>("password")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("password");
-
-                    b.Property<string>("phone")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("phone");
-
-                    b.Property<string>("state")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("state");
-
-                    b.Property<string>("street")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("street");
-
-                    b.Property<string>("uuId")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("uuId");
-
-                    b.HasKey("sellerId");
-
-                    b.ToTable("Sellers");
                 });
 #pragma warning restore 612, 618
         }
